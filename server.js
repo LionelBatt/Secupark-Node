@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const db = require("./models");
+const db = require("./app/models");
 const { Router } = require("express");
 const swaggerUi = require('swagger-ui-express');
 //api = require("./routes/api.json");
