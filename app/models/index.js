@@ -27,10 +27,6 @@ db.sequelize = sequelize;
 
 db.user =require("../models/user.model.js")(sequelize, Sequelize);
 db.role =require("../models/role.model.js")(sequelize, Sequelize);
-// db.collaborateurs=require("../models/collaborateurs.model.js")(sequelize, Sequelize);
-// db.ResetToken=require("../models/ResetToken.model")(sequelize, Sequelize);
-// db.utils=require("../models/utils.model.js")(sequelize, Sequelize);
-// db.absence=require("../models/absence.model.js")(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
     through: "user_roles",
