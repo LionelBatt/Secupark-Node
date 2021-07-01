@@ -1,5 +1,5 @@
 const { authJwt } = require("../middleware");
-const controller = require("../controllers/parking.controler");
+const controller = require("../controllers/car.controler");
 
 module.exports = function(app) {
     app.use(function (req, res, next) {
@@ -12,6 +12,6 @@ module.exports = function(app) {
     app.post(
         "/api/secupark/guest-car",
         [authJwt.verifyToken],
-        controller.guest
+        controller.createCar()
     )
 };
