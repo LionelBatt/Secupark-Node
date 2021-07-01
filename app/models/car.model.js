@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const car = sequelize.define("users", {
+    const car = sequelize.define("car", {
         plaque: {
             type: Sequelize.STRING
         },
@@ -13,7 +13,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         },
         is_visitor: {
-            type: Sequelize.BOOL
+            type: Sequelize.BOOLEAN
         },
         parking: {
             type: Sequelize.STRING
