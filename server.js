@@ -54,3 +54,4 @@ app.listen(PORT, () => {
 
 
 require('./app/routes/auth.routes')(app);
+require('./app/routes/car.routes')(app);
