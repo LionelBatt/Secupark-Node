@@ -13,5 +13,10 @@ module.exports = function(app) {
         "/api/secupark/guest-car",
         [authJwt.verifyToken],
         controller.guest
-    )
+    );
+    app.post(
+        "/api/secupark/new-car",
+        [authJwt.verifyToken],
+        controller.newCar
+    );
 };
