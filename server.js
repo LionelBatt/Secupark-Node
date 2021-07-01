@@ -29,9 +29,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.json({ message: "hello world" });
 });
+// db.sequelize.sync({force: true}).then(() => {
+//   console.log('Drop and Resync Db');
+//   initial();
+// });
+//
+// function initial() {
+//   Role.create({
+//     id: 1,
+//     name: "user"
+//   });
+//
+//   Role.create({
+//     id: 2,
+//     name: "admin"
+//   });
+// }
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
+
+
+require('./app/routes/auth.routes')(app);
