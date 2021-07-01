@@ -30,3 +30,9 @@ exports.newCar = (req, res) => {
         res.status(200).send({message: "success"});
     })
 }
+
+exports.getHistory = (req, res) => {
+    Car.findAll({}).all().then(cars => {
+        return res.status(200).json(cars);
+    })
+}

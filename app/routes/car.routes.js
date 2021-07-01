@@ -19,4 +19,9 @@ module.exports = function(app) {
         [authJwt.verifyToken],
         controller.newCar
     );
+    app.get(
+        '/api/secupark/history',
+        [authJwt.verifyToken],
+        controller.getHistory
+    )
 };
