@@ -2,7 +2,6 @@ const db = require("../models");
 const crypto = require("crypto");
 const nodemailer = require('nodemailer');
 const User = db.user;
-const Collab = db.collaborateurs;
 const ResetToken = db.ResetToken;
 const utils = db.utils;
 const Op = db.Sequelize.Op;
@@ -126,23 +125,4 @@ exports.changePassword = (req, res, next) => {
     .catch(err => {
       res.status(500).send({ message: err.message });
     });
-
-    exports.search = (req, res , next) => {
-        Collab.findAll({
-            where: {
-                email: req.query.email,
-            }
-        })
-            .then(Collab => {
-                if (Collab == null) {
-                    return res.status(404).send({message: "Aucune donnée présente, une erreur est survenue"});
-                }
-                res.status(200).send({
-                    email: Collab.email,
-                });
-            })
-            .catch(err => {
-                res.status(500).send({message: err.message});
-            });
-    }
 };

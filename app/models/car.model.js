@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
         model: {
             type: Sequelize.STRING
         },
-        owner: {
+        name: {
             type: Sequelize.STRING
         },
         is_visitor: {

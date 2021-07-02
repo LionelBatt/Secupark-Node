@@ -7,8 +7,9 @@ exports.guest = (req, res) => {
         plaque: req.body.plaque,
         brand: req.body.brand,
         model: req.body.model,
-        owner: req.body.username,
+        name: req.body.name,
         is_visitor: req.body.is_visitor,
+        parking:req.body.parking,
     }).then(Car => {
         if (Car == null) {
             return res.status(404).send({message: "an error occured"});
@@ -21,8 +22,8 @@ exports.newCar = (req, res) => {
         plaque: req.body.plaque,
         brand: req.body.brand,
         model: req.body.model,
-        owner: req.body.username,
         is_visitor: req.body.is_visitor,
+        parking:req.body.parking,
     }).then(Car => {
         if (Car == null) {
             return res.status(404).send({message: "an error occured"});
@@ -32,7 +33,8 @@ exports.newCar = (req, res) => {
 }
 
 exports.getHistory = (req, res) => {
-    Car.findAll({}).all().then(cars => {
+    Car.findAll({})
+        .then(cars => {
         return res.status(200).json(cars);
     })
 }
