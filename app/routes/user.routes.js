@@ -22,7 +22,7 @@ module.exports = function(app) {
   );
   
   app.post(
-    "/api/secupaark/forgot-password",
+    "/api/secupark/forgot-password",
     controller.forgot
   );
 };
