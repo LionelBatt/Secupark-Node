@@ -51,7 +51,7 @@ exports.forgot = (req, res) => {
             to: req.body.email,
             replyTo: 'no-reply@lionel-batt.fr',
             subject: 'Reset your Password',
-            text: 'To reset your password, please click the link below.\n\nhttp://localhost:8080/api/user/reset-password?token=' + encodeURIComponent(token) + '&email=' + req.body.email
+            text: 'To reset your password, please click the link below.\n\nhttp://localhost:8080/api/secupark/reset-password?token=' + encodeURIComponent(token) + '&email=' + req.body.email
         }
         if (!utils.user) {
                 return res.status(404).send({message: "une erreur est survenue"});
