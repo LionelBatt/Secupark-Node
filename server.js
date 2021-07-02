@@ -15,6 +15,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 

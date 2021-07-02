@@ -11,7 +11,7 @@ module.exports = function(app) {
           const query = querystring.stringify({
               "token": req.query.token
           });
-        res.redirect('https://conservative-hockey-31123.herokuapp.com/resetPassword?'+ query);
+        res.redirect('http://localhost:8081/resetPassword?'+ query);
        },
     controller.resetPassword
   );
