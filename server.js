@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const db = require("./models");
+const db = require("./app/models");
 const { Router } = require("express");
 const swaggerUi = require('swagger-ui-express');
 //api = require("./routes/api.json");
@@ -27,11 +27,31 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "hello world" });
+    res.json({ message: "hello world" });s
 });
+// db.sequelize.sync({force: true}).then(() => {
+//   console.log('Drop and Resync Db');
+//   initial();
+// });
+//
+// function initial() {
+//   Role.create({
+//     id: 1,
+//     name: "user"
+//   });
+//
+//   Role.create({
+//     id: 2,
+//     name: "admin"
+//   });
+// }
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
+
+
+require('./app/routes/auth.routes')(app);
+require('./app/routes/car.routes')(app);
