@@ -126,3 +126,26 @@ exports.changePassword = (req, res, next) => {
       res.status(500).send({ message: err.message });
     });
 };
+
+exports.findUser = (req , res ,next ) => {
+    User.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(user =>{
+        if(!user){
+            return res.status(404).send({message:"Utilisateur non trouvé"})
+        }
+        res.status(200).send({
+            email: user.email,
+            lastname:user.lastname,
+            firstname:user.firstname,
+            adresse:user.adresse,
+            postCode:user.postCode,
+            city:user.city,
+        })
+    }).catch(err => {
+        res.status(500).send({ message: err.message });
+    });
+}
+

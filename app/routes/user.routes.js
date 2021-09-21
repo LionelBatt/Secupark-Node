@@ -25,4 +25,9 @@ module.exports = function(app) {
     "/api/secupark/forgot-password",
     controller.forgot
   );
+
+  app.get(
+      "/api/secupark/find-user",
+      controller.findUser
+  )
 };

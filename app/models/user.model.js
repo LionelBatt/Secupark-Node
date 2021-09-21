@@ -18,6 +18,12 @@ module.exports = (sequelize, Sequelize) => {
         adresse: {
             type: Sequelize.STRING
         },
+        postCode: {
+            type: Sequelize.STRING
+        },
+        city: {
+            type: Sequelize.STRING
+        },
     });
 
     return User;

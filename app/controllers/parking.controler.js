@@ -1,6 +1,7 @@
 const db = require("../models");
 const config = require("../config/auth.config");
 const Car = db.car;
+const User = db.user;
 
 exports.guest = (req, res) => {
     Car.create({
